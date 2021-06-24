@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.netology.deliverytests.DeliveryFormTests" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-06-24T18:28:15" hostname="MIDDLEEARTH" time="25.084">
+  <properties/>
+  <testcase name="shouldTestValidInfo()" classname="ru.netology.deliverytests.DeliveryFormTests" time="13.235"/>
+  <testcase name="shouldFillInDateIncorrectly()" classname="ru.netology.deliverytests.DeliveryFormTests" time="1.052"/>
+  <testcase name="shouldTestInvalidPhoneLess()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.988"/>
+  <testcase name="shouldTestInvalidPhoneMore()" classname="ru.netology.deliverytests.DeliveryFormTests" time="1.072"/>
+  <testcase name="shouldBlinkButtonColorOnClick()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.434"/>
+  <testcase name="shouldTestInvalidCity()" classname="ru.netology.deliverytests.DeliveryFormTests" time="1.027"/>
+  <testcase name="shouldTestInvalidDate()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.996"/>
+  <testcase name="shouldTestEmptyPhone()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.905"/>
+  <testcase name="shouldTestNameWithNumbers()" classname="ru.netology.deliverytests.DeliveryFormTests" time="1.004"/>
+  <testcase name="shouldTestWithoutCheckBoxTick()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.883"/>
+  <testcase name="shouldTestLatinName()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.984"/>
+  <testcase name="shouldTestEmptyCity()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.91"/>
+  <testcase name="shouldTestEmptyForm()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.681"/>
+  <testcase name="shouldTestEmptyName()" classname="ru.netology.deliverytests.DeliveryFormTests" time="0.907"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[Test worker] INFO com.codeborne.selenide.impl.WebDriverThreadLocalContainer - No webdriver is bound to current thread: 14 - let's create a new webdriver
+[Test worker] INFO com.codeborne.selenide.impl.FileHelper - Creating folder: C:\Users\nadin\Desktop\Nadya studies\Java\CardDeliveryApp\build\downloads\1624559295461_14908_14
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Using chromedriver 91.0.4472.101 (resolved driver for Chrome 91)
+[Test worker] INFO io.github.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\nadin\.cache\selenium\chromedriver\win32\91.0.4472.101\chromedriver.exe
+Starting ChromeDriver 91.0.4472.101 (af52a90bf87030dd1523486a1cd3ae25c5d76c9b-refs/branch-heads/4472@{#1462}) on port 39418
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+июн. 24, 2021 11:28:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[Test worker] INFO com.codeborne.selenide.webdriver.BrowserResizer - Set browser size to 1366x768
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - BrowserName=chrome Version=91.0.4472.114 Platform=WINDOWS
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenide v. 5.21.0
+[Test worker] INFO com.codeborne.selenide.webdriver.WebDriverFactory - Selenium WebDriver v. 3.141.59 build time: 2018-11-14T08:17:03
+[Test worker] INFO com.codeborne.selenide.drivercommands.CreateDriverCommand - Create webdriver in current thread 14: ChromeDriver -> ChromeDriver: chrome on WINDOWS (fb9ef7e379bffeddf219fe7ec9e38152)
+]]></system-err>
+</testsuite>
