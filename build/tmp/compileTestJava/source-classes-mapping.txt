@@ -1,4 +1,0 @@
-ru/netology/deliverytests/DeliveryFormTests.java
- ru.netology.deliverytests.DeliveryFormTests
-ru/netology/deliverytests/ComplexElementsTesting.java
- ru.netology.deliverytests.ComplexElementsTesting

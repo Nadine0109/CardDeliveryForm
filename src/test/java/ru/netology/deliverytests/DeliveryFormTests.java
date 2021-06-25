@@ -202,6 +202,23 @@ public class DeliveryFormTests {
     }
 
     @Test
+    void shouldTestNameWithYo() {
+        //open("http://localhost:9999");
+        $("[data-test-id='city'] [class='input__control']").setValue("Магадан");
+        $("[data-test-id='date'] [class='input__control']").click();
+        $("[data-test-id='date'] [class='input__control']").sendKeys(Keys.CONTROL + "A");
+        $("[data-test-id='date'] [class='input__control']").sendKeys(Keys.BACK_SPACE);
+        String date = LocalDate.now().plusDays(4).format(ofPattern("dd.MM.yyyy"));
+        $("[data-test-id='date'] [class='input__control']").setValue(date);
+        $("[data-test-id='name'] [class='input__control']").setValue("Лёша Петров");
+        $("[data-test-id='phone'] [class='input__control']").setValue("+45678901234");
+        $("[data-test-id='agreement'] [class='checkbox__box']").click();
+        $$("button").find(exactText("Забронировать")).click();
+        $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
+        $("[data-test-id='notification'] [class='notification__content']").shouldHave(text("Встреча успешно забронирована на " + (date)));
+    }
+
+    @Test
     void shouldTestNameWithNumbers() {
         //open("http://localhost:9999");
         $("[data-test-id='city'] [class='input__control']").setValue("Вологда");
