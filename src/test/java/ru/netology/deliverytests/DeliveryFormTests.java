@@ -86,13 +86,63 @@ public class DeliveryFormTests {
     }
 
     @Test
-    void shouldTestInvalidDate() {
+    void shouldTestCityInLatin() {
+        //open("http://localhost:9999");
+        $("[data-test-id='city'] .input__control").setValue("Moskva");
+        $("[data-test-id='date'] .input__control").click();
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.BACK_SPACE);
+        String date = LocalDate.now().plusDays(9).format(ofPattern("dd.MM.yyyy"));
+        $("[data-test-id='date'] .input__control").setValue(date);
+        $("[data-test-id='name'] .input__control").setValue("Рюшечки Кудрявые");
+        $("[data-test-id='phone'] .input__control").setValue("+34716384974");
+        $("[data-test-id='agreement'] .checkbox__box").click();
+        $$("button").find(exactText("Забронировать")).click();
+        $("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible)
+                .shouldHave(text("Доставка в выбранный город недоступна"));
+    }
+
+    @Test
+    void shouldTestCityWithNumbers() {
+        //open("http://localhost:9999");
+        $("[data-test-id='city'] .input__control").setValue("77777");
+        $("[data-test-id='date'] .input__control").click();
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.BACK_SPACE);
+        String date = LocalDate.now().plusDays(9).format(ofPattern("dd.MM.yyyy"));
+        $("[data-test-id='date'] .input__control").setValue(date);
+        $("[data-test-id='name'] .input__control").setValue("Косой Переулок");
+        $("[data-test-id='phone'] .input__control").setValue("+46104967891");
+        $("[data-test-id='agreement'] .checkbox__box").click();
+        $$("button").find(exactText("Забронировать")).click();
+        $("[data-test-id='city'].input_invalid .input__sub").shouldBe(visible)
+                .shouldHave(text("Доставка в выбранный город недоступна"));
+    }
+
+    @Test
+    void shouldTestPastDate() {
         //open("http://localhost:9999");
         $("[data-test-id='city'] .input__control").setValue("Саранск");
         $("[data-test-id='date'] .input__control").click();
         $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
         $("[data-test-id='date'] .input__control").sendKeys(Keys.BACK_SPACE);
         String date = LocalDate.now().minusDays(3).format(ofPattern("dd.MM.yyyy"));
+        $("[data-test-id='date'] .input__control").setValue(date);
+        $("[data-test-id='name'] .input__control").setValue("Чипсы От-Бингрэ");
+        $("[data-test-id='phone'] .input__control").setValue("+64582309871");
+        $("[data-test-id='agreement'] .checkbox__box").click();
+        $$("button").find(exactText("Забронировать")).click();
+        $(withText("Заказ на выбранную дату невозможен")).shouldBe(visible);
+    }
+
+    @Test
+    void shouldTestTheSameDayDate() {
+        //open("http://localhost:9999");
+        $("[data-test-id='city'] .input__control").setValue("Саранск");
+        $("[data-test-id='date'] .input__control").click();
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.CONTROL + "A");
+        $("[data-test-id='date'] .input__control").sendKeys(Keys.BACK_SPACE);
+        String date = LocalDate.now().format(ofPattern("dd.MM.yyyy"));
         $("[data-test-id='date'] .input__control").setValue(date);
         $("[data-test-id='name'] .input__control").setValue("Чипсы От-Бингрэ");
         $("[data-test-id='phone'] .input__control").setValue("+64582309871");
